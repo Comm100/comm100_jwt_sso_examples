@@ -1,0 +1,34 @@
+﻿@model JsonWebTokenServer.Models.LoginModel
+
+<div class="row" style="margin-top:150px;" id="div-login">
+    <form class="col-sm-push-3 col-sm-6 col-md-push-4 col-md-4" action="~/accounts/login" method="post">
+        <div class="panel panel-default">
+            <div class="text-center" style="padding-top: 20px;"><h3>User Sign in</h3></div>
+            <div class="panel-body" style="padding-left: 20px; padding-right: 20px; padding-bottom: 40px;">
+                <div class="text-danger">
+                    @Html.ValidationSummary(true)
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Username" id="input-username" name="username" class="form-control" value="@Model.Username" style="border-radius: 3px; height: 40px;"/>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" id="input-password" name="password" class="form-control" value="@Model.Password" style="border-radius: 3px; height: 40px;" />
+                </div>
+                <div>
+                    <input hidden="hidden" name="redirectUri" value="@Model.RedirectUri" />
+                </div>
+                <div hidden id="div-msg" class="text-danger">
+                    Authenticate failed.
+                </div>
+
+                <div class="text-right" style="margin-top: 20px;">
+                    <button id="btn-login" type="submit" class="btn btn-primary btn-lg" style="width: 100%; background-color: #ff761a; border-color: #ff761a; border-radius: 3px;">
+                        Sign in
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
